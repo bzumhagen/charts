@@ -35,7 +35,7 @@ spec:
 {{ include "labels.standard" . | indent 8 }}
     spec:
       {{ if .Values.rbac.create }}
-      serviceAccountName: {{ template "redis-ha.fullname" . }}-svcacct
+      serviceAccountName: {{ template "redis-ha.serviceAccountName" . }}
       {{- end }}
       {{- if .Values.nodeSelector }}
       nodeSelector:
